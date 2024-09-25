@@ -11,7 +11,7 @@ This is a simple yet powerful Weather App built using the [Weather API](https://
 
 ## Visit
 
-You can visit the live version of the Weather App [here](https://Raigitacc87.github.io/weather-app/).
+You can visit the live version of the Weather App [here](https://ravigitacc87.github.io/Weather-App/).
 
 ## Technologies Used
 
@@ -45,7 +45,7 @@ You can visit the live version of the Weather App [here](https://Raigitacc87.git
 
 ## Screenshots
 
-![Weather App Screenshot](screenshot.png)
+![Weather App Screenshot](./images/Screenshot.png)
 
 ## Contributing
 
