@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="output.css" />
+</head>
+
+<body class="bg-blue-300">
+    <!-- HEADER -->
+    <div class='bg-gray-300 h-20 m-0'>
+        <h1 class=" flex justify-center items-center text-5xl font-serif">
+            <img class="w-12 m-2 mix-blend-darken" src="./images/sun.gif" /> Weather
+        </h1>
+    </div>
+    <br>
+    <!-- MIDDLE-PART CITY -->
+    <div>
+        <div class=' w-full h-auto pl-16 flex justify-evenly items-center'>
+            <div class='inline w-1/2'>
+                <h1 class='pt-5 pb-5 text-4xl w-auto '><span id="name">Chandigarh</span>,
+                    <span id="statename"> Punjab</span>,
+                    <span id="countryname">In</span>
+                </h1>
+
+                <h1 class='text-lg w-auto'>
+                    <span id="today_weather_type">Clear sky</span> . <span id="today_day">Sunday</span>, <span
+                        id="today_date">22</span>
+                    <span id="today_month">jan</span> ,
+                    <span id="today_time">12:30</span>
+                </h1>
+            </div>
+            <div class='h-auto w-screen flex justify-between'>
+                <div class='flex items-center'>
+                    <h1 class='text-5xl p-6'>
+                        <span id="today_temp">31
+                        </span> °C
+                    </h1>
+                    <img class='h-28 w-28' src='./images/temprature.png'>
+                </div>
+                <div class='float-right w-auto h-8 rounded-2xl flex items-center mr-8 mt-1 bg-gray-700'>
+                    <input id='inputbox' class='rounded-tl-2xl rounded-bl-2xl pl-3 h-8 text-blue-800 outline-none'
+                        type="text" placeholder='Enter City Name'>
+                    <img id='inputbtn' class='h-8 p-1 m-2 cursor-pointer' src='./images/search2.png'>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <!-- TODAY-WEATHER DETAILS -->
+
+    <div class="h-max flex pl-2  text-white">
+        <div class=' w-100 h-auto'>
+            <div class='text-center mt-2 p-1 bg-blue-500 border-2 border-blue-500 rounded-lg'>
+                <h1 class='text-4xl mb-6' id="today_days">Sunday</h1>
+                <div id="today_icon" class='flex justify-center items-center'>
+                    <img class='h-24' src='./images/icon.png'>
+                </div>
+                <h1 class='text-4xl'>
+                    <span id="todays_temp">31
+                    </span> °C
+                </h1>
+                <p><span id="todays_weather_type">Clear Sky</span></p>
+            </div>
+            <div class='mt-2 border-2 bg-blue-500 border-blue-600 rounded-lg p-2'>
+                <div class='flex justify-around text-center'>
+                    <div class='flex p-2'>
+                        <img class='h-14' src='./images/high-temperature.png'>
+                        <div class='ml-3'>
+                            <h1>Max Temp</h1>
+                            <p><span id="today_max_temp">21</span>°C</p>
+                        </div>
+                    </div>
+                    <div class='flex p-2'>
+                        <img class='h-14' src='./images/low-temperature.png'>
+                        <div class='ml-3'>
+                            <h1>Min Temp</h1>
+                            <p><span id="today_min_temp">18</span>°C</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class='flex justify-around text-center'>
+                    <div class='flex p-2'>
+                        <img class='h-14' src='./images/sunrise.png'>
+                        <div class='ml-3'>
+                            <h1>Sunrise</h1>
+                            <p><span id="today_sunrise">6:00 AM</span></p>
+                        </div>
+                    </div>
+                    <div class='flex p-2'>
+                        <img class='h-14' src='./images/sunset.png'>
+                        <div class='ml-3'>
+                            <h1>Sunset</h1>
+                            <p><span id="today_sunset">5:00 PM</span></p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class='flex justify-around'>
+                    <div class='flex'>
+                        <img class='h-14' src='./images/humidity.png'>
+                        <div class='ml-3'>
+                            <h1>Humidity</h1>
+                            <p><span id="today_humidity">60</span> %</p>
+                        </div>
+                    </div>
+                    <div class='flex'>
+                        <img class='h-14' src='./images/air pressure.png'>
+                        <div class='ml-3'>
+                            <h1>Pressure</h1>
+                            <p><span id="today_pressure">530</span> hPa</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class='flex justify-around'>
+                    <div class='flex'>
+                        <img class='h-14' src='./images/wind.png'>
+                        <div class='ml-3'>
+                            <h1>Wind Speed</h1>
+                            <p><span id="today_wind">63</span> Km/h</p>
+                        </div>
+                    </div>
+                    <div class='flex'>
+                        <img class='h-14' src='./images/visibility.png'>
+                        <div class='ml-3'>
+                            <h1>Visibility</h1>
+                            <p><span id="today_visibility">53</span> Km</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT-SIDE_DETAILS -->
+
+        <div class='w-full p-2'>
+            <div class='flex justify-evenly h-60'>
+
+                <div class='bg-blue-500 text-white text-center w-40 rounded-3xl'>
+                    <h1 id="Today_forecast_time_1" class='text-2xl mt-2 mb-3'>01:00</h1>
+                    <div id="Today_forecast_icon_1" class='flex justify-center items-center'>
+                        <img class='h-24' src='./images/icon.png'>
+                    </div>
+                    <h1 class='text-3xl'>
+                        <span id="Today_forecast_temp_1">26
+                        </span> °C
+                    </h1>
+                    <p class='p-2'><span id="Today_forecast_sky_1">Clear Sky</span></p>
+                </div>
+
+                <div class='bg-blue-500 text-white text-center w-40 rounded-3xl'>
+                    <h1 id="Today_forecast_time_2" class='text-2xl mt-2 mb-3'>02:00</h1>
+                    <div id="Today_forecast_icon_2" class='flex justify-center items-center'>
+                        <img class='h-24' src='./images/icon.png'>
+                    </div>
+                    <h1 class='text-3xl'>
+                        <span id="Today_forecast_temp_2">28
+                        </span> °C
+                    </h1>
+                    <p class='p-2'><span id="Today_forecast_sky_2">Clear</span></p>
+                </div>
+
+                <div class='bg-blue-500 text-white text-center w-40 rounded-3xl'>
+                    <h1 id="Today_forecast_time_3" class='text-2xl mt-2 mb-3'>03:00</h1>
+                    <div id="Today_forecast_icon_3" class='flex justify-center items-center'>
+                        <img class='h-24' src='./images/icon.png'>
+                    </div>
+                    <h1 class='text-3xl'>
+                        <span id="Today_forecast_temp_3">27
+                        </span> °C
+                    </h1>
+                    <p class='p-2'><span id="Today_forecast_sky_3">Cloudy</span></p>
+                </div>
+
+                <div class='bg-blue-500 text-white text-center w-40 rounded-3xl'>
+                    <h1 id="Today_forecast_time_4" class='text-2xl mt-2 mb-3'>04:00</h1>
+                    <div id="Today_forecast_icon_4" class='flex justify-center items-center'>
+                        <img class='h-24' src='./images/icon.png'>
+                    </div>
+                    <h1 class='text-3xl'>
+                        <span id="Today_forecast_temp_4">29
+                        </span> °C
+                    </h1>
+                    <p class='p-2'><span id="Today_forecast_sky_4">Cloudy</span></p>
+                </div>
+
+                <div class='bg-blue-500 text-white text-center w-40 rounded-3xl'>
+                    <h1 id="Today_forecast_time_5" class='text-2xl mt-2 mb-3'>05:00</h1>
+                    <div id="Today_forecast_icon_5" class='flex justify-center items-center'>
+                        <img class='h-24' src='./images/icon.png'>
+                    </div>
+                    <h1 class='text-3xl'>
+                        <span id="Today_forecast_temp_5">25
+                        </span> °C
+                    </h1>
+                    <p class='p-2'><span id="Today_forecast_sky_5">Rainy</span></p>
+                </div>
+
+                <div class='bg-blue-500 text-white text-center w-40 rounded-3xl'>
+                    <h1 id="Today_forecast_time_6" class='text-2xl mt-2 mb-3'>06:00</h1>
+                    <div id="Today_forecast_icon_6" class='flex justify-center items-center'>
+                        <img class='h-24' src='./images/icon.png'>
+                    </div>
+                    <h1 class='text-3xl'>
+                        <span id="Today_forecast_temp_6">24
+                        </span> °C
+                    </h1>
+                    <p class='p-2'><span id="Today_forecast_sky_6">Clear Sky</span></p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT-SIDE_DETAILS_BOTTOM -->
+
+            <div id="Six_days_forecast" class='flex justify-evenly items-center mt-6'>
+
+                <div class='bg-blue-500 text-white text-center w-40 h-64 p-3 rounded-xl'>
+                    <h1 id="Next_day_1" class='text-3xl mb-4'>Monday</h1>
+                    <div id="Next_day_weather_icon_1" class='flex justify-center items-center'>
+                        <img class='h-24' src='./images/icon.png'>
+                    </div>
+                    <h1 class='text-3xl'>
+                        <span id="Next_day_temp_1">26
+                        </span> °C
+                    </h1>
+                    <p class='p-2'><span id="Next_day_weather_type_1">Clear Sky</span></p>
+                </div>
+
+                <div class='bg-blue-500 text-white text-center w-40 h-64 p-3 rounded-xl'>
+                    <h1 id="Next_day_2" class='text-3xl mb-4'>Tuesday</h1>
+                    <div id="Next_day_weather_icon_2" class='flex justify-center items-center'>
+                        <img class='h-24' src='./images/icon.png'>
+                    </div>
+                    <h1 class='text-3xl'>
+                        <span id="Next_day_temp_2">30
+                        </span> °C
+                    </h1>
+                    <p class='p-2'><span id="Next_day_weather_type_2">Cloudy</span></p>
+                </div>
+
+                <div class='bg-blue-500 text-white text-center w-40 h-64 p-3 rounded-xl'>
+                    <h1 id="Next_day_3" class='text-3xl mb-4'>Wednesday</h1>
+                    <div id="Next_day_weather_icon_3" class='flex justify-center items-center'>
+                        <img class='h-24' src='./images/icon.png'>
+                    </div>
+                    <h1 class='text-3xl'>
+                        <span id="Next_day_temp_3">28
+                        </span> °C
+                    </h1>
+                    <p class='p-2'><span id="Next_day_weather_type_3">Sunny</span></p>
+                </div>
+
+                <div class='bg-blue-500 text-white text-center w-40 h-64 p-3 rounded-xl'>
+                    <h1 id="Next_day_4" class='text-3xl mb-4'>Thrusday</h1>
+                    <div id="Next_day_weather_icon_4" class='flex justify-center items-center'>
+                        <img class='h-24' src='./images/icon.png'>
+                    </div>
+                    <h1 class='text-3xl'>
+                        <span id="Next_day_temp_4">32
+                        </span> °C
+                    </h1>
+                    <p class='p-2'><span id="Next_day_weather_type_4">Rainy</span></p>
+                </div>
+
+                <div class='bg-blue-500 text-white text-center w-40 h-64 p-3 rounded-xl'>
+                    <h1 id="Next_day_5" class='text-3xl mb-4'>Friday</h1>
+                    <div id="Next_day_weather_icon_5" class='flex justify-center items-center'>
+                        <img class='h-24' src='./images/icon.png'>
+                    </div>
+                    <h1 class='text-3xl'>
+                        <span id="Next_day_temp_5">29
+                        </span> °C
+                    </h1>
+                    <p class='p-2'><span id="Next_day_weather_type_5">Clear</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <scrip3 src="https://momentjs.com/downloads/moment.min.js"></scrip3>
+    <script src="script.js"></script>
+</body>
+
+</htp>
