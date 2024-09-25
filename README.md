@@ -23,7 +23,7 @@ You can visit the live version of the Weather App [here](https://ravigitacc87.gi
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/weather-app.git
+   git clone https://github.com/ravigitacc87/weather-app.git
    cd weather-app
    ```
 
