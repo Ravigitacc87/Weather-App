@@ -5,17 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="output.css" />
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+</style>
 
 <body class="bg-blue-300">
     <!-- HEADER -->
-    <div class='bg-gray-300 h-20 w-screen'>
-        <h1 class=" flex justify-center items-center text-5xl font-serif">
-            <img class="w-12 m-2 mix-blend-darken" src="./images/sun.gif" /> Weather
+    <div class="bg-gray-300 w-full px-4">
+        <h1 class="flex justify-center items-center text-5xl font-serif">
+            <img class="h-14 m-2 mix-blend-darken" src="./images/sun.gif" alt="Weather Icon" /> Weather
         </h1>
     </div>
     <br>
@@ -56,7 +59,7 @@
     <!-- TODAY-WEATHER DETAILS -->
 
     <div class="h-max flex pl-2  text-white">
-        <div class=' w-full h-auto'>
+        <div class=' w-100 h-auto flex-shrink-0'>
             <div class='text-center mt-2 p-1 bg-blue-500 border-2 border-blue-500 rounded-lg'>
                 <h1 class='text-4xl mb-6' id="today_days">Sunday</h1>
                 <div id="today_icon" class='flex justify-center items-center'>
@@ -141,8 +144,8 @@
 
         <!-- RIGHT-SIDE_DETAILS -->
 
-        <div class='w-full p-2'>
-            <div class='flex justify-evenly items-center gap-6 ml-6 mr-2 h-60'>
+        <div class='w-full'>
+            <div class='flex justify-evenly items-center gap-6 flex-wrap ml-6 mr-2 h-60'>
 
                 <div class='bg-blue-500 text-white text-center w-40 rounded-3xl'>
                     <h1 id="Today_forecast_time_1" class='text-2xl mt-2 mb-3'>01:00</h1>
@@ -220,9 +223,9 @@
 
             <!-- RIGHT-SIDE_DETAILS_BOTTOM -->
 
-            <div id="Six_days_forecast" class='flex justify-evenly items-center mt-6'>
+            <div id="Six_days_forecast" class='flex justify-evenly items-center flex-wrap mt-6'>
 
-                <div class='bg-blue-500 text-white text-center w-44 h-64 p-3 rounded-xl'>
+                <div class='bg-blue-500 text-white text-center  w-44 h-64 p-3 rounded-xl'>
                     <h1 id="Next_day_1" class='text-3xl mb-4'>Monday</h1>
                     <div id="Next_day_weather_icon_1" class='flex justify-center items-center'>
                         <img class='h-24' src='./images/icon.png'>
@@ -289,4 +292,4 @@
     <script src="script.js"></script>
 </body>
 
-</html>
+</htp>
